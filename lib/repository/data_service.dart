@@ -32,7 +32,7 @@ class RequestByCategory {
     String url = '$baseUrl/top-headlines?country=id&category=$category&apiKey=$apiKey';
     
     var response = await http.get(Uri.parse(url));
-    if(response.statusCode == 20){
+    if(response.statusCode == 200){
       var data = jsonDecode(response.body);
       print(response.body);
       var result = data['articles'] as List;
